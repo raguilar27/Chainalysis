@@ -1,9 +1,8 @@
 const express = require("express");
+const coinbase = require("./modules/coinbase");
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Crypto Prices");
-});
+app.use("/api", coinbase);
 
 const PORT = 3001;
 app.listen(PORT, () => {
