@@ -4,8 +4,9 @@ const kraken = require("./modules/kraken");
 require("dotenv").config();
 const app = express();
 
+// Route to kraken api
 app.use("/kraken", kraken);
-
+// Route to coinbase api
 app.use("/coinbase", coinbase);
 
 const PORT = process.env.PORT;

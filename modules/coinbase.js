@@ -7,6 +7,7 @@ const buy = async (currencyPair) => {
     const response = await axios.get(
       `https://api.coinbase.com/v2/prices/${currencyPair}/buy`
     );
+    // Returns buy price of currencyPair
     return response.data.data.amount;
   } catch (err) {
     return err;
@@ -17,6 +18,7 @@ const sell = async (currencyPair) => {
     const response = await axios.get(
       `https://api.coinbase.com/v2/prices/${currencyPair}/sell`
     );
+    // Returns sell price of currencyPair
     return response.data.data.amount;
   } catch (err) {
     return err;
