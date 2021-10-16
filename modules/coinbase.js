@@ -1,36 +1,46 @@
 const express = require("express");
+const axios = require("axios");
 const router = express.Router();
-const Client = require("coinbase").Client;
-require("dotenv").config();
 
-const client = new Client({
-  apiKey: process.env.COINBASE_APIKEY,
-  apiSecret: process.env.COINBASE_APISECRET,
-  strictSSL: false,
+const buy = async (currencyPair) => {
+  try {
+    const response = await axios.get(
+      `https://api.coinbase.com/v2/prices/${currencyPair}/buy`
+    );
+    return response.data.data.amount;
+  } catch (err) {
+    return err;
+  }
+};
+const sell = async (currencyPair) => {
+  try {
+    const response = await axios.get(
+      `https://api.coinbase.com/v2/prices/${currencyPair}/sell`
+    );
+    return response.data.data.amount;
+  } catch (err) {
+    return err;
+  }
+};
+
+const btcPair = "BTC-USD";
+router.get("/buy-btc", async (req, res) => {
+  const price = await buy(btcPair);
+  res.json(price);
+});
+router.get("/sell-btc", async (req, res) => {
+  const price = await sell(btcPair);
+  res.json(price);
 });
 
-router.get("/btc/buy", (req, res) => {
-  client.getBuyPrice({ currencyPair: "BTC-USD" }, (err, price) => {
-    res.json(price);
-  });
+const ethPair = "ETH-USD";
+router.get("/buy-eth", async (req, res) => {
+  const price = await buy(ethPair);
+  res.json(price);
 });
-
-router.get("/btc/sell", (req, res) => {
-  client.getSellPrice({ currencyPair: "BTC-USD" }, (err, price) => {
-    res.json(price);
-  });
-});
-
-router.get("/eth/buy", (req, res) => {
-  client.getBuyPrice({ currencyPair: "ETH-USD" }, (err, price) => {
-    res.json(price);
-  });
-});
-
-router.get("/eth/sell", (req, res) => {
-  client.getSellPrice({ currencyPair: "ETH-USD" }, (err, price) => {
-    res.json(price);
-  });
+router.get("/sell-eth", async (req, res) => {
+  const price = await sell(ethPair);
+  res.json(price);
 });
 
 module.exports = router;
