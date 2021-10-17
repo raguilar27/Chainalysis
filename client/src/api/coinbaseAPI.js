@@ -7,7 +7,7 @@ const getBuyBtc = () => {
 };
 
 const getSellBtc = () => {
-  const request = axios.get(`${baseURL}/sell-btc}`);
+  const request = axios.get(`${baseURL}/sell-btc`);
   return request.then((res) => res.data);
 };
 
