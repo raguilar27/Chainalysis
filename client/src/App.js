@@ -8,16 +8,18 @@ function App() {
 
   useEffect(() => {
     coinbaseAPI.getBuyBtc().then((price) => {
-      console.log(price);
-      setCoinbase(coinbase.concat({ BuyBtc: price }));
+      console.log(price, typeof price);
+      setCoinbase(coinbase.concat(price));
     });
   }, []);
 
+  console.log(coinbase);
+
   return (
     <div className="App">
-      <h4>Crypto Prices</h4>
-      <h6>Coinbase:</h6>
-      <p>Bitcoin buy price: ${coinbase.BuyBtc}</p>
+      <h1>Crypto Prices</h1>
+      <h4>Coinbase:</h4>
+      <p>Bitcoin buy price: ${coinbase[coinbase.length - 1]}</p>
     </div>
   );
 }
