@@ -2,7 +2,7 @@ import axios from "axios";
 const baseURL = "http://localhost:3001/coinbase";
 
 const getBuyBtc = () => {
-  const request = axios.get(`${baseURL}/buy-btc}`);
+  const request = axios.get(`${baseURL}/buy-btc`);
   return request.then((res) => res.data);
 };
 
