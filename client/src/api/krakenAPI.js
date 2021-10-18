@@ -11,7 +11,7 @@ const getSellBtc = () => {
   return request.then((res) => res.data);
 };
 
-const getButEth = () => {
+const getBuyEth = () => {
   const request = axios.get(`${baseURL}/buy-eth`);
   return request.then((res) => res.data);
 };
@@ -21,4 +21,11 @@ const getSellEth = () => {
   return request.then((res) => res.data);
 };
 
-export default { getBuyBtc, getSellBtc, getButEth, getSellEth };
+const krakenAPI = {
+  getBuyBtc,
+  getSellBtc,
+  getBuyEth,
+  getSellEth,
+};
+
+export default krakenAPI;
