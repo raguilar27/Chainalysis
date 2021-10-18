@@ -1,27 +1,4 @@
-import krakenAPI from "../api/krakenAPI";
-import { useState, useEffect } from "react";
-
-const Kraken = () => {
-  const [buyBtc, setBuyBtc] = useState();
-  const [sellBtc, setSellBtc] = useState();
-  const [buyEth, setBuyEth] = useState();
-  const [sellEth, setSellEth] = useState();
-
-  useEffect(() => {
-    krakenAPI.getBuyBtc().then((price) => {
-      setBuyBtc(price);
-    });
-    krakenAPI.getSellBtc().then((price) => {
-      setSellBtc(price);
-    });
-    krakenAPI.getBuyEth().then((price) => {
-      setBuyEth(price);
-    });
-    krakenAPI.getSellEth().then((price) => {
-      setSellEth(price);
-    });
-  }, []);
-
+const Kraken = ({ buyBtc, sellBtc, buyEth, sellEth }) => {
   return (
     <div className="kraken">
       <h2>Kraken</h2>

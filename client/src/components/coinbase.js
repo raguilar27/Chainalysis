@@ -1,27 +1,4 @@
-import coinbaseAPI from "../api/coinbaseAPI";
-import { useState, useEffect } from "react";
-
-const Coinbase = () => {
-  const [buyBtc, setBuyBtc] = useState();
-  const [sellBtc, setSellBtc] = useState();
-  const [buyEth, setBuyEth] = useState();
-  const [sellEth, setSellEth] = useState();
-
-  useEffect(() => {
-    coinbaseAPI.getBuyBtc().then((price) => {
-      setBuyBtc(price);
-    });
-    coinbaseAPI.getSellBtc().then((price) => {
-      setSellBtc(price);
-    });
-    coinbaseAPI.getBuyEth().then((price) => {
-      setBuyEth(price);
-    });
-    coinbaseAPI.getSellEth().then((price) => {
-      setSellEth(price);
-    });
-  }, []);
-
+const Coinbase = ({ buyBtc, sellBtc, buyEth, sellEth }) => {
   return (
     <div className="coinbase">
       <h2>Coinbase:</h2>
