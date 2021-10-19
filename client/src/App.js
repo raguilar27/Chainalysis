@@ -21,16 +21,16 @@ function App() {
   useEffect(() => {
     // Coinbase Api calls
     coinbaseAPI.getBuyBtc().then((price) => {
-      setCBuyBtc(Number(price));
+      setCBuyBtc(Number(price).toFixed(2));
     });
     coinbaseAPI.getSellBtc().then((price) => {
-      setCSellBtc(Number(price));
+      setCSellBtc(Number(price).toFixed(2));
     });
     coinbaseAPI.getBuyEth().then((price) => {
-      setCBuyEth(Number(price));
+      setCBuyEth(Number(price).toFixed(2));
     });
     coinbaseAPI.getSellEth().then((price) => {
-      setCSellEth(Number(price));
+      setCSellEth(Number(price).toFixed(2));
     });
     // Kraken Api calls
     krakenAPI.getBuyBtc().then((price) => {
@@ -47,15 +47,17 @@ function App() {
     });
   }, []);
 
-  const buyBtc = cbuyBtc < kbuyBtc ? cbuyBtc : kbuyBtc;
-  const sellBtc = csellBtc < ksellBtc ? ksellBtc : csellBtc;
-  const buyEth = cbuyEth < kbuyEth ? cbuyEth : kbuyEth;
-  const sellEth = csellEth < ksellEth ? ksellEth : csellEth;
+  const buyBtc = cbuyBtc < kbuyBtc ? cbuyBtc + "coinbase" : kbuyBtc + "kraken";
+  const sellBtc =
+    csellBtc < ksellBtc ? ksellBtc + "kraken" : csellBtc + "coinbase";
+  const buyEth = cbuyEth < kbuyEth ? cbuyEth + "coinbase" : kbuyEth + "kraken";
+  const sellEth =
+    csellEth < ksellEth ? ksellEth + "kraken" : csellEth + "coinbase";
 
-  console.log("Buy BTC:", buyBtc);
+  /*console.log("Buy BTC:", buyBtc);
   console.log("Sell BTC:", sellBtc);
   console.log("Buy ETH:", buyEth);
-  console.log("Sell ETH:", sellEth);
+  console.log("Sell ETH:", sellEth);*/
 
   return (
     <div className="App">
