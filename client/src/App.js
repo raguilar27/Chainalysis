@@ -5,6 +5,8 @@ import coinbaseAPI from "./api/coinbaseAPI";
 import krakenAPI from "./api/krakenAPI";
 import coinbaseLogo from "./logos/Coinbase.svg.png";
 import krakenLogo from "./logos/krakenlogo.png";
+import BitcoinLogo from "./logos/bitcoin_logo.svg.png";
+import EthereumLogo from "./logos/ethereum.png";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -65,23 +67,29 @@ function App() {
       <div className="exchanges">
         <div className="exchange">
           <img src={coinbaseLogo} alt="Coinbase Logo" />
-          <ExchangePrices
-            buyBtc={cbuyBtc}
-            buyEth={cbuyEth}
-            sellBtc={csellBtc}
-            sellEth={csellEth}
-          />
         </div>
         <div className="exchange">
           <img src={krakenLogo} alt="Kraken Logo" />
-          <ExchangePrices
-            buyBtc={kbuyBtc}
-            buyEth={kbuyEth}
-            sellBtc={ksellBtc}
-            sellEth={ksellEth}
-          />
         </div>
       </div>
+      <div className="crypto-logo">
+        <img src={BitcoinLogo} alt="Bitcoin Logo" />
+      </div>
+      <ExchangePrices
+        cbuy={cbuyBtc}
+        csell={csellBtc}
+        kbuy={kbuyBtc}
+        ksell={ksellBtc}
+      />
+      <div className="crypto-logo">
+        <img src={EthereumLogo} alt="Ethereum Logo" />
+      </div>
+      <ExchangePrices
+        cbuy={cbuyEth}
+        csell={csellEth}
+        kbuy={kbuyEth}
+        ksell={ksellEth}
+      />
       <Recommend
         buyBtc={buyBtc}
         buyEth={buyEth}
