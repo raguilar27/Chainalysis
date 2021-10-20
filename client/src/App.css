@@ -27,7 +27,30 @@
 }
 
 .recommend {
+  text-align: center;
+}
+.recommendation {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+}
+.recommend-crypto {
+  width: 100%;
+}
+.recommend-exchange {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.recommend-crypto img {
+  margin-bottom: 20px;
+  width: 30%;
+}
+.new p {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
