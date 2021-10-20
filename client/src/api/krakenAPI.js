@@ -1,23 +1,22 @@
 import axios from "axios";
-const baseURL = "http://localhost:3001/kraken";
 
 const getBuyBtc = () => {
-  const request = axios.get(`${baseURL}/buy-btc`);
+  const request = axios.get("/kraken/buy-btc");
   return request.then((res) => res.data);
 };
 
 const getSellBtc = () => {
-  const request = axios.get(`${baseURL}/sell-btc`);
+  const request = axios.get("/kraken/sell-btc");
   return request.then((res) => res.data);
 };
 
 const getBuyEth = () => {
-  const request = axios.get(`${baseURL}/buy-eth`);
+  const request = axios.get("/kraken/buy-eth");
   return request.then((res) => res.data);
 };
 
 const getSellEth = () => {
-  const request = axios.get(`${baseURL}/sell-eth`);
+  const request = axios.get("/kraken/sell-eth");
   return request.then((res) => res.data);
 };
 
