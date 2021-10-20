@@ -1,6 +1,8 @@
 # Chainalysis
 Chainalysis Assessment 
 
+[Live build](https://exchange-compares.herokuapp.com/)
+
 ![Chainalysis ](https://user-images.githubusercontent.com/69137547/138091128-d8be4928-258f-41a7-a6f3-9177222a7ec6.png)
 
 Zoomed out picture of application.
@@ -24,15 +26,18 @@ To load new prices refresh the screen.
 2.Is any part of it over-designed? ( It is fine to over-design to showcase your skills as long as you are clear about it)
 
   I think the components I created were a little over-desinged because I could have just made one component for each subsection and written all the code there, but it 
-  helps with readability and reusability. The use of useEffect hook was over-designed because it calls the api functions multiple times, but it would be better suited if
-  it had a refresh button.
+  helps with readability and reusability. The use of useEffect hook was over-designed because it calls the api functions multiple times, but it was intended to add a 
+  time interval that refreshes the application after sometime.
   
 3.If you have to scale your solution to 100 users/second traffic what changes would you make, if any?
 
-  I would have used Redux to help with calling the api function in the frontend and would have created classes in the backend to remove redudant code.
+  I would have used Redux to help with calling the api function in the frontend and would have created classes in the backend to remove redudant code and improve the speed of 
+  Api calls from the exchange websites.
   
 4.What are some other enhancements you would have made, if you had more time to do this implementation
 
-  Some enchancements I would have made if I had more time to do this implementation is create an interval that would refresh the page by itself using the useEffect hook every
-  minute. Created classes to remove redundant code in the backend server. Used Redux to help with organizing the api calls in the frontend. Added more styles to the frontend page.
+  Some enchancements I would have made if I had more time to do this implementation is create an interval that would refresh the page by itself with a set time interval using
+  the useEffect hook. Created classes to remove redundant code in the backend server. Used Redux to help with organizing the api calls in the frontend and reduce redundant code.
+  Added more styles to the frontend page. Allow users to click on the best price websites and visit their websites to learn more. Add more exchange websites and allow users to 
+  chose which exchanges they want to compare.
   
