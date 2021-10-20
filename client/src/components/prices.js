@@ -1,6 +1,6 @@
 const Prices = ({ buy, sell }) => {
   return (
-    <div className="prices">
+    <div>
       <p>Buy Price: ${buy}</p>
       <p>Sell Price: ${sell}</p>
     </div>

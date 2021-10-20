@@ -1,4 +1,5 @@
 .App {
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
@@ -6,7 +7,6 @@
   display: flex;
   flex-direction: row;
   font-size: 26px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .exchange {
@@ -21,17 +21,15 @@
 .exchange-prices {
   display: flex;
   flex-direction: column;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: bolder;
 }
 .exchange-prices img {
   margin-left: 2rem;
   width: 33%;
 }
 
-.prices {
-  font-size: xx-small;
-}
-
 .recommend {
-  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
 }

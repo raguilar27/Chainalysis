@@ -62,7 +62,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Crypto Prices</h1>
       <div className="exchanges">
         <div className="exchange">
           <img src={coinbaseLogo} alt="Coinbase Logo" />
