@@ -59,11 +59,6 @@ function App() {
   const sellEth =
     csellEth < ksellEth ? ksellEth + "kraken" : csellEth + "coinbase";
 
-  /*console.log("Buy BTC:", buyBtc);
-  console.log("Sell BTC:", sellBtc);
-  console.log("Buy ETH:", buyEth);
-  console.log("Sell ETH:", sellEth);*/
-
   return (
     <div className="App">
       <ExchangeLogos />

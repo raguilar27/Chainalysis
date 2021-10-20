@@ -26,9 +26,6 @@
   width: 20%;
 }
 
-.recommend {
-  text-align: center;
-}
 .recommendation {
   display: flex;
   flex-direction: row;
