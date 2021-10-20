@@ -1,9 +1,10 @@
 import "./App.css";
-import Coinbase from "./components/coinbase";
-import Kraken from "./components/kraken";
+import ExchangePrices from "./components/exchangePrices";
 import Recommend from "./components/recommend";
 import coinbaseAPI from "./api/coinbaseAPI";
 import krakenAPI from "./api/krakenAPI";
+import coinbaseLogo from "./logos/Coinbase.svg.png";
+import krakenLogo from "./logos/krakenlogo.png";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -62,18 +63,26 @@ function App() {
   return (
     <div className="App">
       <h1>Crypto Prices</h1>
-      <Coinbase
-        buyBtc={cbuyBtc}
-        buyEth={cbuyEth}
-        sellBtc={csellBtc}
-        sellEth={csellEth}
-      />
-      <Kraken
-        buyBtc={kbuyBtc}
-        buyEth={kbuyEth}
-        sellBtc={ksellBtc}
-        sellEth={ksellEth}
-      />
+      <div className="exchanges">
+        <div className="exchange">
+          <img src={coinbaseLogo} alt="Coinbase Logo" />
+          <ExchangePrices
+            buyBtc={cbuyBtc}
+            buyEth={cbuyEth}
+            sellBtc={csellBtc}
+            sellEth={csellEth}
+          />
+        </div>
+        <div className="exchange">
+          <img src={krakenLogo} alt="Kraken Logo" />
+          <ExchangePrices
+            buyBtc={kbuyBtc}
+            buyEth={kbuyEth}
+            sellBtc={ksellBtc}
+            sellEth={ksellEth}
+          />
+        </div>
+      </div>
       <Recommend
         buyBtc={buyBtc}
         buyEth={buyEth}
