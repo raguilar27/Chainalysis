@@ -28,6 +28,10 @@
   width: 33%;
 }
 
+.prices {
+  font-size: xx-small;
+}
+
 .recommend {
   font-family: "Courier New", Courier, monospace;
 }
