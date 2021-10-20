@@ -1,12 +1,14 @@
 import "./App.css";
+// Components
+import ExchangeLogos from "./components/exchangeLogos";
 import ExchangePrices from "./components/exchangePrices";
+import CryptoLogo from "./components/cryptoLogo";
 import Recommend from "./components/recommend";
-import coinbaseAPI from "./api/coinbaseAPI";
-import krakenAPI from "./api/krakenAPI";
-import coinbaseLogo from "./logos/Coinbase.svg.png";
-import krakenLogo from "./logos/krakenlogo.png";
 import BitcoinLogo from "./logos/bitcoin_logo.svg.png";
 import EthereumLogo from "./logos/ethereum.png";
+// APIs
+import coinbaseAPI from "./api/coinbaseAPI";
+import krakenAPI from "./api/krakenAPI";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -64,26 +66,15 @@ function App() {
 
   return (
     <div className="App">
-      <div className="exchanges">
-        <div className="exchange">
-          <img src={coinbaseLogo} alt="Coinbase Logo" />
-        </div>
-        <div className="exchange">
-          <img src={krakenLogo} alt="Kraken Logo" />
-        </div>
-      </div>
-      <div className="crypto-logo">
-        <img src={BitcoinLogo} alt="Bitcoin Logo" />
-      </div>
+      <ExchangeLogos />
+      <CryptoLogo cryptoLogo={BitcoinLogo} />
       <ExchangePrices
         cbuy={cbuyBtc}
         csell={csellBtc}
         kbuy={kbuyBtc}
         ksell={ksellBtc}
       />
-      <div className="crypto-logo">
-        <img src={EthereumLogo} alt="Ethereum Logo" />
-      </div>
+      <CryptoLogo cryptoLogo={EthereumLogo} />
       <ExchangePrices
         cbuy={cbuyEth}
         csell={csellEth}
