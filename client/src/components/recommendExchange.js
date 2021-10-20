@@ -7,20 +7,20 @@ const RecommendExchange = ({ buy, sell }) => {
       <div className="new">
         {buy.includes("kraken") ? (
           <p>
-            Best Buy Price: <img src={krakenLogo} alt="Kraken Logo" />
+            Best Buy Price At <img src={krakenLogo} alt="Kraken Logo" />
           </p>
         ) : (
           <p>
-            Best Buy Price: <img src={coinbaseLogo} alt="Coinbase Logo" />
+            Best Buy Price At <img src={coinbaseLogo} alt="Coinbase Logo" />
           </p>
         )}
         {sell.includes("kraken") ? (
           <p>
-            Best Sell Price: <img src={krakenLogo} alt="Kraken Logo" />
+            Best Sell Price At <img src={krakenLogo} alt="Kraken Logo" />
           </p>
         ) : (
           <p>
-            Best Sell Price: <img src={coinbaseLogo} alt="Coinbase Logo" />
+            Best Sell Price At <img src={coinbaseLogo} alt="Coinbase Logo" />
           </p>
         )}
       </div>
